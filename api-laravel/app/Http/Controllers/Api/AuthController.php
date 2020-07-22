@@ -24,6 +24,25 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
 
+
+     /**
+     * Log the user out (Invalidate the token).
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout()
+    {
+        auth('api')->logout();
+
+        return response()->json(['message' => 'Successfully logged out']);
+    }
+
+    /**
+     * Refresh a token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
       /**
      * Get the token array structure.
      *
