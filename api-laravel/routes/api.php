@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-
+Route::post('auth/login', 'Api\\AuthController@login');
 Route::get('users', 'Api\\UserController@index');
