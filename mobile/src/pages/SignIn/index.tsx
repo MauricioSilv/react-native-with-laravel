@@ -3,13 +3,28 @@ import { FormHandles } from '@unform/core';
 import Input from '../../components/Input';
 import Button from '../../components/Button'
 
+import { useAuth } from '../../hooks/auth';
+
 import { Container, TitleLaravel, TitleReact, ContainerTitle, FormInput } from './styles';
 
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
+
 const SignIn: React.FC = () => {
+  const { signIn } = useAuth();
+
   const formRef = useRef<FormHandles>(null);
-  const handleSignIn = useCallback((data: object) => {
-    console.log(data);
-  },[]);
+  const handleSignIn = useCallback(async(data: SignInFormData) => {
+    
+    await signIn({
+      email: data.email,
+      password: data.password,
+    });
+
+  },[signIn]);
 
 
   return ( 
