@@ -36,11 +36,11 @@ const SignIn: React.FC = () => {
 
       <FormInput ref={formRef} onSubmit={handleSignIn}>
       <Input name="email" icon="mail" placeholder="E-mail" />
-      <Input name="password" icon="lock" placeholder="Your password"/>
+      <Input name="password" secureTextEntry icon="lock" placeholder="Your password"/>
 
       <Button onPress={() => {
         formRef.current?.submitForm();
-      }}>Entrar</Button>
+      }}>Log in</Button>
       </FormInput>
     </Container>
   )};

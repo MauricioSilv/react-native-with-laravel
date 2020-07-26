@@ -1,20 +1,20 @@
 import React from 'react';
-import { View, Button } from 'react-native';
 
 import { useAuth  } from '../../hooks/auth';
+
+import { Container, ButtonLogout, ButtonLogoutText } from './styles';
 
 const IntialPage: React.FC = () => {
   const { signOut } = useAuth();
 
   return (
-    <View style={{ 
-     flex: 1, 
-     justifyContent: 'center', 
-     paddingLeft: 20, 
-     paddingRight: 20 
-  }}>
-      <Button title="Sair" onPress={signOut} />
-    </View>
+    <>
+      <Container>
+        <ButtonLogout onPress={signOut}>
+          <ButtonLogoutText>Go out</ButtonLogoutText>  
+        </ButtonLogout>
+      </Container>
+    </>
   );
 }
 
